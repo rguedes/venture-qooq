@@ -1,0 +1,22 @@
+<?php if($_product = $block->getProduct()): ?>
+    <section id="accessoires" class="container">
+        <div class="accessoires row">
+            <h2 class="col-sm-12"><?php echo __("Accessoires"); ?></h2>
+            <?php foreach($_product->getRelatedProducts() as $related): ?>
+                <?php $_related = $block->getLoadProduct($related->getData('entity_id'));?>
+                <div class="col-sm-4 text-center">
+                    <a href="<?php echo $_related->getProductUrl();?>">
+                        <img src="<?php echo $block->getImageUrl($_related, 'cart_cross_sell_products');?>" alt="">
+                        <p><?php echo $_related->getName();?></p>
+                        <div class="price">
+                            <p><?php echo $block->getProductPrice($_related->getFinalPrice());?></p>
+                        </div>
+                        <div class="red-button">
+                            <?php echo __("en savoir plus"); ?>
+                        </div>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
+<?php endif; ?>

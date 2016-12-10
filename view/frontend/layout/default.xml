@@ -1,0 +1,5 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../vendor/magento/framework/Module/etc/module.xsd">
+    <referenceBlock name="head">
+        <!-- Special block with necessary config is added on the page -->
+    </referenceBlock>
+</page>

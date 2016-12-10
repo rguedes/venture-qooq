@@ -1,0 +1,25 @@
+<?php if($_product =$block->getProduct()): ?>
+<section class="highlight-product">
+    <div class="container">
+        <div class="col-sm-6">
+            <a href="<?php echo $_product->getProductUrl();?>">
+                <img src="<?php echo $block->getImageUrl($_product, 'product_image');?>" alt="">
+            </a>
+            <div class="separator" style="background-image: url('<?php echo $block->getMediaUrl('images/shadow3copie12_.png');?>');"></div>
+        </div>
+        <div class="col-sm-offset-1 col-sm-5">
+            <div class="highlight-info">
+                <div>
+                    <p><?php echo $_product->getName();?></p>
+                    <div class="price">
+                        <p><?php echo $block->getProductPrice($_product->getFinalPrice());?></p>
+                    </div>
+                    <a href="<?php echo $_product->getProductUrl();?>" class="red-button">
+                        <?php echo __("acheter");?>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
